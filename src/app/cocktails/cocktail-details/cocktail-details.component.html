@@ -1,0 +1,22 @@
+<div class="card">
+    <img class="card-img-top" src="{{ cocktail.image }}" alt="{{ cocktail.name }}">
+    <div class="card-body">
+        <h5 class="card-title">{{ cocktail.name }}</h5>
+        <p class="card-text">{{ cocktail.instructions }}</p>
+        <p class="card-text">Serve: {{ cocktail.glass }}</p>
+    </div>
+    <ul *ngIf="cocktail.ingredients.length > 0" class="list-group list-group-flush">
+        <div *ngFor="let ingredient of cocktail.ingredients">
+            <li *ngIf="ingredient.amount; else noAmount" class="list-group-item">{{ ingredient.name }} - {{ ingredient.amount }}</li>
+            <ng-template #noAmount>
+                <li class="list-group-item">{{ ingredient.name }}</li>
+            </ng-template>
+        </div>
+    </ul>
+    <div class="card-body">
+        <a (click)="onAddToShoppingList()" class="card-link">Add to ShoppingList</a>
+        <a *ngIf="isLogged" (click)="onLikeCocktail()" class="card-link" style="float: right;">
+            <img [src]="(wishlist.has(cocktail.id))?'assets/heart_fill.png':'assets/heart_empty.png'" alt="heart_img">
+        </a>
+    </div>
+</div>

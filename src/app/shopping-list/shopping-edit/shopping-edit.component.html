@@ -1,0 +1,27 @@
+<form #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input 
+            type="text" 
+            name="name" 
+            class="form-control" 
+            required
+            ngModel
+            #name="ngModel">
+        <span class="help-block" *ngIf="!name.valid && name.touched">Invalid Name</span>
+    </div>
+    <div class="form-group">
+        <label for="amount">Amount</label>
+        <input 
+            type="text" 
+            name="amount" 
+            class="form-control" 
+            ngModel
+            #amount="ngModel">
+        <span class="help-block" *ngIf="!amount.valid && amount.touched">Invalid Amount</span>
+    </div>
+    <button [disabled]="!f.valid" class="btn btn-success" type="submit">{{ (editMode)?'Update':'Add' }}</button>
+    <button [disabled]="!editMode" class="btn btn-danger" type="button" (click)="onDelete()">Delete</button>
+    <button class="btn btn-primary" type="button" (click)="onClear()">Clear</button>
+</form>
+

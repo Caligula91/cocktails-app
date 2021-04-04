@@ -1,0 +1,7 @@
+<div class="row">
+    <div
+        *ngFor="let cocktail of wishlist" 
+        class="col-md-4">
+        <app-cocktail-details [wishlistMode]="true" [cocktail]="cocktail"></app-cocktail-details>
+    </div>
+</div>

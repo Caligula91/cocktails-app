@@ -1,0 +1,77 @@
+<ng-template appPlaceholder></ng-template>
+<div class="row">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+        <!-- <app-alert *ngIf="error" [message]="error" (close)="error=null"></app-alert> -->
+        <div *ngIf="error" class="alert alert-danger" style="text-align: center;">
+            <h4 style="overflow: hidden;">{{ error }}</h4>
+            <button type="button" class="btn btn-danger" (click)="onErrorConfirm()">Okay</button>
+        </div>
+        <div *ngIf="isLoading" style="text-align: center;">
+            <app-loading-spinner></app-loading-spinner>
+        </div>
+        <!-- LOGIN FORM -->
+        <form *ngIf="!isLoading && isLoginMode" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input 
+                    type="text" 
+                    name="email" 
+                    class="form-control"
+                    formControlName="email">
+                <span *ngIf="!loginForm.get('email').valid && loginForm.get('email').touched">Invalid Email</span>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input 
+                    type="password" 
+                    name="password" 
+                    class="form-control"
+                    formControlName="password">
+                <span *ngIf="!loginForm.get('password').valid && loginForm.get('password').touched">Invalid Password</span>
+            </div>
+            <button class="btn btn-success" type="submit" [disabled]="!loginForm.valid">Login</button>
+        </form>
+        <!-- SIGNUP FORM -->
+        <form *ngIf="!isLoading && !isLoginMode" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input 
+                    type="text" 
+                    name="email" 
+                    class="form-control" 
+                    formControlName="email">
+                <span *ngIf="!signupForm.get('email').valid && signupForm.get('email').touched">Invalid Email</span>
+            </div>
+            <div formGroupName="passwordData">
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input 
+                        type="password" 
+                        name="password" 
+                        class="form-control"
+                        formControlName="password">
+                    <span *ngIf="!signupForm.get('passwordData.password').valid && signupForm.get('passwordData.password').touched">Invalid Password</span>
+                </div>
+                <div class="form-group">
+                    <label for="passwordConfirm">PasswordConfirm</label>
+                    <input 
+                        type="password" 
+                        name="passwordConfirm" 
+                        class="form-control" 
+                        formControlName="passwordConfirm">
+                    <span *ngIf="!signupForm.get('passwordData.passwordConfirm').valid && signupForm.get('passwordData.passwordConfirm').touched">Invalid Password Confirm</span>
+                </div>
+                <span *ngIf="
+                    !signupForm.valid &&
+                    signupForm.get('passwordData').errors && 
+                    signupForm.get('passwordData').errors['passwordNotMatching'] &&
+                    signupForm.get('passwordData.password').touched &&
+                    signupForm.get('passwordData.passwordConfirm').touched">Passwords not matching</span>
+            </div>
+            <button class="btn btn-success" type="submit" [disabled]="!signupForm.valid">Signup</button>
+        </form>
+        <hr>
+        <button type="button" class="btn btn-primary" (click)="onChangeState()">Switch to {{ isLoginMode?'Signup':'Login' }}</button>
+        <hr><hr>
+    </div>
+</div>

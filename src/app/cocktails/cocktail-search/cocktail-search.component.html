@@ -1,0 +1,7 @@
+<form class="form-inline" [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <input class="form-control" type="search" name="search" placeholder="Search" aria-label="Search" formControlName="search">
+    </div>
+    <button class="btn btn-outline-success" type="submit" [disabled]="!searchForm.valid">Search</button>
+    <button class="btn btn-danger" type="button" (click)="onClear()">Clear</button>
+</form>
