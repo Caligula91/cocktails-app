@@ -1,10 +1,8 @@
-import { Component, ComponentFactoryResolver, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { Observable, Subscription } from 'rxjs';
-import { AuthService } from './auth.service';
-import { AlertComponent } from '../shared/alert/alert.component';
+import { Subscription } from 'rxjs';
 import * as fromApp from "../store/app.reducer";
 import * as AuthActions from "./store/auth.actions";
 

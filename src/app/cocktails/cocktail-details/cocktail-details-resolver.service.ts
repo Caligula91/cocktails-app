@@ -2,9 +2,8 @@ import { Injectable } from "@angular/core";
 import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from "@angular/router";
 import { Store } from "@ngrx/store";
 import { Observable, of } from "rxjs";
-import { exhaustMap, map, switchMap, take, tap } from "rxjs/operators";
+import { exhaustMap, map, take, tap } from "rxjs/operators";
 import * as fromApp from '../../store/app.reducer';
-import { Cocktail } from "../cocktail.model";
 import * as CocktailsActions from '../store/cocktails.actions';
 
 @Injectable({
