@@ -2,9 +2,11 @@
 
 Angular app for searching cocktails - Angular version 11.1.2.
 
+https://cocktails-app-b7589.firebaseapp.com
+
 ## Search Cocktails
 
-Search cocktails using free API (https://www.thecocktaildb.com/).
+Search cocktails using free API (https://www.thecocktaildb.com)
 
 ## Create account via Firebase Authentication
 
