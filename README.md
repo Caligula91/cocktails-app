@@ -1,27 +1,23 @@
 # CocktailsApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.2.
+Angular app for searching cocktails - Angular version 11.1.2.
 
-## Development server
+## Search Cocktails
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Search cocktails using free API (https://www.thecocktaildb.com/).
 
-## Code scaffolding
+## Create account via Firebase Authentication
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Signup or Signin with Firebase Authentication through a REST API.
 
-## Build
+## Add Ingredients to Shopping List
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Cocktails ingredients can be saved in shopping list. Shoppping list is automatically saved in database with each change.
 
-## Running unit tests
+## Add Cocktails to Wishlist
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Cocktails can be added to whishlist by clicking heart icon under cocktail's details.
 
-## Running end-to-end tests
+## Wihslist and Shopping list are stored in Firebase Realtime Database
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+When adding cocktail to wihslist or changing shopping list, they are saved in database. User can access only it's own data.
