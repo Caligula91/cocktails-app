@@ -2,7 +2,6 @@
   "name": "cocktails-app",
   "version": "0.0.0",
   "scripts": {
-    "config": "ts-node ./src/assets/setEnv.ts",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
