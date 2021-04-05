@@ -20,4 +20,4 @@ Cocktails can be added to whishlist by clicking heart icon under cocktail's deta
 
 ## Wihslist and Shopping list are stored in Firebase Realtime Database
 
-When adding cocktail to wihslist or changing shopping list, they are saved in database. User can access only it's own data.
+Each change of wihslist or shopping list is commited in database. User can access only it's own data.
