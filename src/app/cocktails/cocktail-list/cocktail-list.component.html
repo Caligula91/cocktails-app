@@ -1,15 +1,16 @@
 <div class="row">
-    <div class="col-xs-12">
+    <div class="col-sm-12">
         <app-cocktail-search></app-cocktail-search>
     </div>
 </div>
+<div *ngIf="fetchingCocktails" style="text-align: center;">
+    <app-loading-spinner></app-loading-spinner>
+</div>
 <div class="row">
     <div class="col-xs-12">
-        <div *ngIf="fetchingCocktails">
-            <app-loading-spinner></app-loading-spinner>
-        </div>
         <app-cocktail-item 
             *ngFor="let cocktailElement of cocktails"
-            [cocktail]="cocktailElement" [id]="cocktailElement.id"></app-cocktail-item>
+            [cocktail]="cocktailElement" [id]="cocktailElement.id">
+        </app-cocktail-item>
     </div>
 </div>
