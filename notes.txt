@@ -1,2 +1,0 @@
-shopping-edit c 'amount': || null
-strawbery margarita (salt) !
