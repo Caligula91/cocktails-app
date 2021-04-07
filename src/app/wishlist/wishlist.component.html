@@ -1,4 +1,7 @@
 <div class="row">
+    <div *ngIf="wishlist.length === 0" class="col-12">
+        <h3 style="text-align: center; margin-top: 55px;">Try adding some cocktails to wishlist :)</h3>
+    </div>
     <div
         *ngFor="let cocktail of wishlist" 
         class="col-md-4">
