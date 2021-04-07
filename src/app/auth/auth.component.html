@@ -50,7 +50,7 @@
                         name="password" 
                         class="form-control"
                         formControlName="password">
-                    <span *ngIf="!signupForm.get('passwordData.password').valid && signupForm.get('passwordData.password').touched">Invalid Password</span>
+                    <span *ngIf="!signupForm.get('passwordData.password').valid && signupForm.get('passwordData.password').touched">Length must be at least 6 characters</span>
                 </div>
                 <div class="form-group">
                     <label for="passwordConfirm">PasswordConfirm</label>
@@ -59,7 +59,7 @@
                         name="passwordConfirm" 
                         class="form-control" 
                         formControlName="passwordConfirm">
-                    <span *ngIf="!signupForm.get('passwordData.passwordConfirm').valid && signupForm.get('passwordData.passwordConfirm').touched">Invalid Password Confirm</span>
+                    <span *ngIf="!signupForm.get('passwordData.passwordConfirm').valid && signupForm.get('passwordData.passwordConfirm').touched">Length must be at least 6 characters</span>
                 </div>
                 <span *ngIf="
                     !signupForm.valid &&
